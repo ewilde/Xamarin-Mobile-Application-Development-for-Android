@@ -4,13 +4,14 @@
     <Files>
       <File FileName="POIApp/MainActivity.cs" Line="1" Column="1" />
       <File FileName="POIApp/PointOfInterest.cs" Line="1" Column="1" />
-      <File FileName="POIApp/POIJsonService.cs" Line="58" Column="4" />
-      <File FileName="POITestApp/POITestFixture.cs" Line="17" Column="48" />
+      <File FileName="POIApp/POIJsonService.cs" Line="78" Column="24" />
+      <File FileName="POITestApp/POITestFixture.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.POIApp AndroidDeviceId-Debug="emulator-5554" />
+  <MonoDevelop.Ide.ItemProperties.POIApp AndroidDeviceId-Debug="emulator-5554" MonoForAntroid.PreferredDevice="Nexus One" />
+  <MonoDevelop.Ide.ItemProperties.POITestApp AndroidDeviceId-Debug="emulator-5554" />
 </Properties>

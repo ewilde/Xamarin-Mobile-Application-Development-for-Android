@@ -4,7 +4,7 @@ namespace POIApp
 {
 	public class PointOfInterest
 	{
-		public int? Id { get; set;}
+		public int Id { get; set;}
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public string AddressLine1 { get; set; }
@@ -15,6 +15,11 @@ namespace POIApp
 		public double Latitude { get; set; }
 		public double Longitude { get; set; }
 
+
+		public PointOfInterest()
+		{
+			this.Id = -1;
+		}
 	}
 }
 

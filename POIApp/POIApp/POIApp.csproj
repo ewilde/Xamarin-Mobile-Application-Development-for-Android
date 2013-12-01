@@ -50,22 +50,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PointOfInterest.cs" />
     <Compile Include="IPOIDataService.cs" />
     <Compile Include="POIJsonService.cs" />
+    <Compile Include="POIListActivity.cs" />
+    <Compile Include="POIListViewAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Data\poi1.json" />
+    <None Include="Data\poi2.json" />
+    <None Include="Data\poi3.json" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\layout\POIList.axml" />
+    <AndroidResource Include="Resources\layout\POIListItem.axml" />
+    <AndroidResource Include="Resources\menu\POIListViewMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -73,5 +79,9 @@
       <Version>4.5.11</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\menu\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>

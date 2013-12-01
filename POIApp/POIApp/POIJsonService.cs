@@ -34,7 +34,7 @@ namespace POIApp
 
 		public PointOfInterest GetPOI (int id)
 		{
-			throw new NotImplementedException ();
+			return _pois.Find (p => p.Id == id);
 		}
 
 		public void SavePOI (PointOfInterest poi)
@@ -49,7 +49,7 @@ namespace POIApp
 			// serialize POI
 			string poiString = JsonConvert.SerializeObject (poi);
 			// write new file or overwrite existing file
-			File.WriteAllText (GetFilename (poi.Id.Value), poiString);
+			File.WriteAllText (GetFilename (poi.Id), poiString);
 
 			// update cache if file save was successful
 			if (newPOI)
@@ -59,23 +59,24 @@ namespace POIApp
 
 		public void DeletePOI (PointOfInterest poi)
 		{
-			throw new NotImplementedException ();
+			File.Delete (GetFilename (poi.Id));
+			_pois.Remove (poi);
 		}
 
 		public System.Collections.Generic.IReadOnlyList<PointOfInterest> POIs {
 			get {
-				throw new NotImplementedException ();
+				return this._pois;
 			}
 		}
 
 		private int GetNextId()
 		{
-			return _pois.Max (p => p.Id.GetValueOrDefault()) + 1;
+			return _pois.Count == 0 ? 1 : _pois.Max (p => p.Id) + 1;
 		}
 
-		private string GetFilename(int id)
+		private string GetFilename(int? id)
 		{
-			return Path.Combine(_storagePath,"poi" + id.ToString() + ".json");
+			return Path.Combine(storagePath,"poi" + id.GetValueOrDefault().ToString() + ".json");
 		}
 
 	}

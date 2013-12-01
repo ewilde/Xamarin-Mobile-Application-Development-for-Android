@@ -31,7 +31,17 @@ namespace POITestApp
 		[Test]
 		public void SavePOI ()
 		{
-			this._poiService.SavePOI (new PointOfInterest());
+			var poi = new PointOfInterest {
+				AddressLine1 = "39 Clinton Road",
+				AddressLine2 = "Bow",
+				City = "London",
+				Description = "My house!",
+				Id = 1,
+				Latitude = 53.34d,
+				Longitude = 2.02d
+			
+			};
+			this._poiService.SavePOI (poi);
 		}
 
 		[Test]
