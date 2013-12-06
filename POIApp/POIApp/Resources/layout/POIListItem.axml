@@ -16,11 +16,12 @@
         p1:orientation="vertical"
         p1:minWidth="25px"
         p1:minHeight="25px"
-        p1:layout_width="wrap_content"
+        p1:layout_width="match_parent"
         p1:layout_height="wrap_content"
         p1:layout_toRightOf="@id/poiImageView"
-        p1:id="@+id/linearLayout1"
-        p1:layout_centerVertical="true">
+        p1:id="@+id/addressLayout"
+        p1:layout_centerVertical="true"
+        p1:layout_marginRight="60dp">
         <TextView
             p1:text="POI Name"
             p1:layout_width="match_parent"
@@ -37,8 +38,7 @@
         p1:text="204 Miles"
         p1:layout_width="wrap_content"
         p1:layout_height="wrap_content"
-        p1:layout_toLeftOf="@id/linearLayout1"
         p1:id="@+id/distanceTextView"
-        p1:layout_alignParentRight="true"
-        p1:layout_centerVertical="true" />
+        p1:layout_centerVertical="true"
+        p1:layout_alignParentRight="true" />
 </RelativeLayout>

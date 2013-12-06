@@ -57,6 +57,7 @@
     <Compile Include="POIJsonService.cs" />
     <Compile Include="POIListActivity.cs" />
     <Compile Include="POIListViewAdapter.cs" />
+    <Compile Include="POIDetailActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -72,6 +73,8 @@
     <AndroidResource Include="Resources\layout\POIList.axml" />
     <AndroidResource Include="Resources\layout\POIListItem.axml" />
     <AndroidResource Include="Resources\menu\POIListViewMenu.xml" />
+    <AndroidResource Include="Resources\layout\POIDetail.axml" />
+    <AndroidResource Include="Resources\menu\POIListDetailMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

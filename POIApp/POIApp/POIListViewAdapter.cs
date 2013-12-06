@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Locations;
 
 namespace POIApp
 {
@@ -18,6 +19,11 @@ namespace POIApp
 		public POIListViewAdapter(Activity context)
 		{
 			_context = context;
+		}
+
+		public Location CurrentLocation {
+			get;
+			set;
 		}
 
 		public override int Count
@@ -41,12 +47,24 @@ namespace POIApp
 
 			view.FindViewById<TextView>(Resource.Id.nameTextView).Text = poi.Name;
 
-			string addr = FormatAddr (poi);
-			if (String.IsNullOrEmpty (addr))
+			if (String.IsNullOrEmpty (poi.Address))
 				view.FindViewById<TextView>(Resource.Id.addrTextView).Visibility
 				= ViewStates.Gone;
 			else
-				view.FindViewById<TextView> (Resource.Id.addrTextView).Text = addr;
+				view.FindViewById<TextView> (Resource.Id.addrTextView).Text = poi.Address;
+
+			if ((CurrentLocation != null) &&
+				(poi.Latitude.HasValue) && (poi.Longitude.HasValue)) {
+				Location poiLocation = new Location ("");
+				poiLocation.Latitude = poi.Latitude.Value;	
+				poiLocation.Longitude = poi.Longitude.Value;
+				float distance = CurrentLocation.DistanceTo (poiLocation) * 0.000621371F; 
+				view.FindViewById<TextView> (Resource.Id.distanceTextView).Text = 
+					String.Format ("{0:0.00} miles", distance);
+			}
+			else {
+				view.FindViewById<TextView> (Resource.Id.distanceTextView).Text = "??";
+			}
 
 			return view;
 		}
@@ -55,29 +73,6 @@ namespace POIApp
 			get {
 				return POIListActivity.POIDataService.POIs[index];
 			}
-		}
-
-		protected string FormatAddr(PointOfInterest poi)
-		{
-			StringBuilder result = new StringBuilder ();
-
-			if (string.IsNullOrEmpty (poi.AddressLine1)) {
-				result.Append (poi.AddressLine1);
-				result.Append (", ");
-			}
-
-
-			if (string.IsNullOrEmpty (poi.City)) {
-				result.Append (poi.City);
-				result.Append (", ");
-			}
-
-
-			if (string.IsNullOrEmpty (poi.PostalCode)) {
-				result.Append (poi.AddressLine1);
-			}
-
-			return result.ToString ().TrimEnd (new[] { ',', ' ' });
 		}
 	}
 }

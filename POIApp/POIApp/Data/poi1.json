@@ -2,12 +2,11 @@
     "AddressLine1": "39 Clinton Road",
     "AddressLine2": "Bow",
     "City": "London",
-    "Description": "My house!",
+    "Description": "My house in the middle of the street!",
     "Id": 1,
-    "Name": "My House",
     "Latitude": 53.340000000000003,
     "Longitude": 2.02,
-    "Name": null,
-    "PostalCode": null,
+    "Name": "Ed & Claire's Home",
+    "PostalCode": "E3 4QY",
     "StateAbbr": null
 }

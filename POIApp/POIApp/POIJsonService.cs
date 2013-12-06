@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Android.Graphics;
 using Newtonsoft.Json;
 using System.IO;
 using System.Linq;
@@ -59,8 +60,17 @@ namespace POIApp
 
 		public void DeletePOI (PointOfInterest poi)
 		{
-			File.Delete (GetFilename (poi.Id));
+			// delete POI JSON file
+			if (File.Exists(GetFilename (poi.Id)))
+				File.Delete (GetFilename (poi.Id));
+
+			// delete POI image file
+			if (File.Exists(GetImageFilename (poi.Id)))
+				File.Delete (GetImageFilename(poi.Id));
+
+			// remove POI from cache
 			_pois.Remove (poi);
+
 		}
 
 		public System.Collections.Generic.IReadOnlyList<PointOfInterest> POIs {
@@ -76,7 +86,30 @@ namespace POIApp
 
 		private string GetFilename(int? id)
 		{
-			return Path.Combine(storagePath,"poi" + id.GetValueOrDefault().ToString() + ".json");
+			return System.IO.Path.Combine(storagePath,"poi" + id.GetValueOrDefault().ToString() + ".json");
+		}
+
+		public string GetImageFilename (int id)
+		{
+			Java.IO.File picturesDir = new Java.IO.File(
+				Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures),
+					"POIApp");
+
+			if (!picturesDir.Exists())
+			{
+				picturesDir.Mkdirs();
+			}
+
+			return System.IO.Path.Combine (picturesDir.Path, "poiimage" + id.ToString () + ".jpg");
+
+		}
+
+		public Android.Graphics.Bitmap GetPOIImage (int id)
+		{
+			if (File.Exists (GetImageFilename (id)))
+				return BitmapFactory.DecodeFile (GetImageFilename (id));
+			else
+				return null;
 		}
 
 	}
