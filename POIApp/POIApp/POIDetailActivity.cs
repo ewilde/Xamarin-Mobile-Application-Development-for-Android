@@ -231,13 +231,13 @@ namespace POIApp
 				else {
 					_imageFile = new Java.IO.File (POIListActivity.POIDataService.GetImageFilename (_poi.Id));
 					cameraIntent.PutExtra (MediaStore.ExtraOutput, Android.Net.Uri.FromFile (_imageFile));
-					cameraIntent.PutExtra (MediaStore.ExtraSizeLimit, 1.5 * 1024);
+					//cameraIntent.PutExtra (MediaStore.ExtraSizeLimit, 1.5 * 1024);
 					StartActivityForResult (cameraIntent, CAPTURE_PHOTO);
 				}
 			}
 		}
 
-		protected override void OnActivityResult (int requestCode, Result     resultCode, Intent data)
+		protected override void OnActivityResult (int requestCode, Result resultCode, Intent data)
 		{
 			if (requestCode == CAPTURE_PHOTO) {
 

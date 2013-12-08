@@ -96,6 +96,6 @@
             p1:src="@android:drawable/ic_menu_gallery"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
-            p1:id="@+id/_poiImageView" />
+            p1:id="@+id/poiImageView" />
     </LinearLayout>
 </ScrollView>

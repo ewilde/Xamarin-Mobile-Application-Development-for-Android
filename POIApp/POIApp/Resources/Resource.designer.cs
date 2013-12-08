@@ -60,35 +60,32 @@ namespace POIApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060012
-			public const int _poiImageView = 2131099666;
+			// aapt resource value: 0x7f06001a
+			public const int actionDelete = 2131099674;
 			
 			// aapt resource value: 0x7f06001b
-			public const int actionDelete = 2131099675;
+			public const int actionNew = 2131099675;
 			
 			// aapt resource value: 0x7f06001c
-			public const int actionNew = 2131099676;
+			public const int actionRefresh = 2131099676;
 			
-			// aapt resource value: 0x7f06001d
-			public const int actionRefresh = 2131099677;
-			
-			// aapt resource value: 0x7f06001a
-			public const int actionSave = 2131099674;
+			// aapt resource value: 0x7f060019
+			public const int actionSave = 2131099673;
 			
 			// aapt resource value: 0x7f060007
 			public const int addrEditText = 2131099655;
 			
-			// aapt resource value: 0x7f060018
-			public const int addrTextView = 2131099672;
+			// aapt resource value: 0x7f060017
+			public const int addrTextView = 2131099671;
 			
-			// aapt resource value: 0x7f060016
-			public const int addressLayout = 2131099670;
+			// aapt resource value: 0x7f060015
+			public const int addressLayout = 2131099669;
 			
 			// aapt resource value: 0x7f060005
 			public const int descrEditText = 2131099653;
 			
-			// aapt resource value: 0x7f060019
-			public const int distanceTextView = 2131099673;
+			// aapt resource value: 0x7f060018
+			public const int distanceTextView = 2131099672;
 			
 			// aapt resource value: 0x7f06000d
 			public const int latEditText = 2131099661;
@@ -108,11 +105,11 @@ namespace POIApp
 			// aapt resource value: 0x7f060003
 			public const int nameEditText = 2131099651;
 			
-			// aapt resource value: 0x7f060017
-			public const int nameTextView = 2131099671;
+			// aapt resource value: 0x7f060016
+			public const int nameTextView = 2131099670;
 			
-			// aapt resource value: 0x7f060015
-			public const int poiImageView = 2131099669;
+			// aapt resource value: 0x7f060012
+			public const int poiImageView = 2131099666;
 			
 			// aapt resource value: 0x7f060013
 			public const int poiListView = 2131099667;

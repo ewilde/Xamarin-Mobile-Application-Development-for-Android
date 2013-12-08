@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -64,6 +65,12 @@ namespace POIApp
 			}
 			else {
 				view.FindViewById<TextView> (Resource.Id.distanceTextView).Text = "??";
+			}
+
+			// if an image is found for a POI then load it into the 
+			Bitmap poiImage = POIListActivity.POIDataService.GetPOIImage (poi.Id);
+			if (poiImage != null) {
+				view.FindViewById<ImageView> (Resource.Id.poiImageView).SetImageBitmap (poiImage);
 			}
 
 			return view;
